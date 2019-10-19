@@ -32,7 +32,7 @@ def lambda_handler(event:, context:)
         end
     
         unless previous_links.include?(title)
-            twitter.update(title.include?("design", "designs", 'web design') ? "#{title} #design #webdesign #{link}" : "#{title} #{link}")
+            twitter.update(title.include?("web design") ? "#{title} #design #webdesign #{link}" : "#{title} #{link} #design")
         end
     end
     { statusCode: 200, body: JSON.generate('Hello from Lambda!') }
